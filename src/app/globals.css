@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 220, 220, 220;
+  --background-end-rgb: 220, 220, 220;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: 220, 220, 220;
+    --background-end-rgb: 220, 220, 220;
   }
 }
 
@@ -26,7 +26,48 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+
+
+
+@layer components {
+
+  .sectionDefault {
+      @apply w-screen h-full flex flex-col items-center justify-center bg-gradient-to-b from-10%  from-bgPrimary via-10% to-bgSecondary;
+  }
+
+  .exactNavLink { 
+      @apply font-bold no-underline text-gray-300 hover:text-white  aria-[current=page]:text-white;
+  }
+
+  .textBox {
+      @apply text-white text-sm sm:text-base md:text-lg font-semibold mt-2 mx-8;
+  }
+
+  .galleryImg {
+      @apply h-[68vh] object-contain m-5 drop-shadow-lg;
+  }
+
+  .formInputLabel {
+      @apply  text-gray-700 text-sm sm:text-base font-semibold mb-1 block;
+  }
+
+  .formTextInput {
+      @apply appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 text-sm sm:text-base leading-tight focus:border-indigo-500
+  }
+
+}
+
 @layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+      display: none;
+  }
+ /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+  }
+
   .text-balance {
     text-wrap: balance;
   }
