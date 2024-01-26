@@ -92,7 +92,7 @@ export default function ContactForm() {
                 Message
 				</label>
 				<textarea
-					className="formTextInput h-32 -mb-4"
+					className="formTextInput h-32 mb-0"
 					id="message"
 					type="text"
 					name="message"

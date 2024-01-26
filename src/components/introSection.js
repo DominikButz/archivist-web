@@ -1,14 +1,17 @@
 'use client';
 import * as React from 'react'
 import { useRef } from 'react'
+import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import SectionAnimationProvider from './fullPageSnappyScrolling/sectionAnimationProvider'
 import iOSImageLight from "/src/images/iOS/documentsList_light_iOS.png"
 import macOSImageLight from "/src/images/macOS/mainWindowWithEditView_light_macOS.png"
-
+import iOSImageDark from "/src/images/iOS/documentsList_dark_iOS.png"
+import macOSImageDark from "/src/images/macOS/mainWindowWithEditView_dark_macOS.png"
 
 const IntroSection = () => {
     const animationRef = useRef();
+    const {theme, setTheme} = useTheme();
 
     return (
 
@@ -17,8 +20,8 @@ const IntroSection = () => {
         <div className='sectionDefault'>
       
             <div ref={animationRef} className='flex flex-row justify-center items-center'>
-                <Image  className="galleryImg" src={iOSImageLight} alt="Dr. Archiver documents list view" />
-                <Image className='galleryImg hidden lg:block' src={macOSImageLight}  alt="Dr. Archiver main window" />  
+                <Image  className="galleryImg" src={theme === 'light' ? iOSImageLight : iOSImageDark} alt="Dr. Archiver documents list view" />
+                <Image className='galleryImg hidden lg:block' src={theme === 'light' ?  macOSImageLight: macOSImageDark}  alt="Dr. Archiver main window" />  
             </div>
 
             <div className="textBox">

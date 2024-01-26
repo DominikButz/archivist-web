@@ -1,11 +1,24 @@
-const withImages = require('next-images')
-module.exports = withImages()
 
 /** @type {import('next').NextConfig} */
+
+const withImages = require('next-images')
+const withMDX = require('@next/mdx')({
+    extension: /\.mdx?$/,
+    options: {
+      remarkPlugins: [],
+      rehypePlugins: [],
+      providerImportSource: '@mdx-js/react',
+    },
+  })
+
+module.exports = withImages()
+
+
 const nextConfig = {
     images: {
-    formats: ['image/webp'],
+        formats: ['image/webp'],
     },
+    pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
 };
 
-module.exports = nextConfig
+module.exports = withMDX(nextConfig)

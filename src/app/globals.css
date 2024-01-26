@@ -1,9 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* 
 :root {
-  --foreground-rgb: 255, 255, 255;
+  --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 220, 220, 220;
   --background-end-rgb: 220, 220, 220;
 }
@@ -11,8 +11,8 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 220, 220, 220;
-    --background-end-rgb: 220, 220, 220;
+    --background-start-rgb: 30, 30, 30;
+    --background-end-rgb: 30, 30, 30;
   }
 }
 
@@ -24,7 +24,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
+} */
 
 
 
@@ -35,8 +35,12 @@ body {
       @apply w-screen h-full flex flex-col items-center justify-center bg-gradient-to-b from-10%  from-bgPrimary via-10% to-bgSecondary;
   }
 
-  .exactNavLink { 
-      @apply font-bold no-underline text-gray-300 hover:text-white  aria-[current=page]:text-white;
+  .inactiveLink { 
+      @apply font-bold no-underline text-slate-400 hover:text-white;
+  }
+
+  .activeLink {
+    @apply font-bold no-underline text-white
   }
 
   .textBox {
@@ -48,11 +52,11 @@ body {
   }
 
   .formInputLabel {
-      @apply  text-gray-700 text-sm sm:text-base font-semibold mb-1 block;
+      @apply  text-stone-700 dark:text-stone-50 text-sm sm:text-base font-semibold mb-1 block;
   }
 
   .formTextInput {
-      @apply appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 text-sm sm:text-base leading-tight focus:border-indigo-500
+      @apply appearance-none border  text-stone-700 dark:text-stone-50 border-gray-400 rounded w-full py-2 px-3 text-sm sm:text-base leading-tight focus:border-indigo-500
   }
 
 }
