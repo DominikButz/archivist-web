@@ -42,7 +42,7 @@ export default function ContactForm() {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-             <div className='text-2xl sm:text-3xl mb-2 font-bold'>Contact</div>
+             <div className='text-2xl sm:text-3xl mb-2 text-stone-800 dark:text-stone-50 font-bold'>Contact</div>
 			<div className="mb-2">
 				<label className="formInputLabel" htmlFor="senderName">
                 First name, last name 

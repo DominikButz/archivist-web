@@ -12,6 +12,9 @@ import macOSImageDark from "/src/images/macOS/mainWindowWithEditView_dark_macOS.
 const IntroSection = () => {
     const animationRef = useRef();
     const {theme, setTheme} = useTheme();
+    console.log('theme ' + theme)
+    const iOSImage = theme === 'light' ? iOSImageLight : iOSImageDark
+    const macOSImage = theme === 'light' ?  macOSImageLight: macOSImageDark
 
     return (
 
@@ -19,14 +22,14 @@ const IntroSection = () => {
     
         <div className='sectionDefault'>
       
-            <div ref={animationRef} className='flex flex-row justify-center items-center'>
-                <Image  className="galleryImg" src={theme === 'light' ? iOSImageLight : iOSImageDark} alt="Dr. Archiver documents list view" />
-                <Image className='galleryImg hidden lg:block' src={theme === 'light' ?  macOSImageLight: macOSImageDark}  alt="Dr. Archiver main window" />  
+            <div ref={animationRef} className='flex flex-row justify-center items-center pt-14'>
+                <Image className='max-h-[68vh] object-contain' src={iOSImage} alt="Dr. Archiver documents list view" placeholder="blur" />
+                <Image className='max-h-[68vh] object-contain hidden sm:block' src={macOSImage}  alt="Dr. Archiver main window" placeholder="blur" />  
             </div>
 
-            <div className="textBox">
-                Dr. Archiver is an AI-powered document archiving app for iOS, iPadOS and MacOS. No subscription. No login. No ads. Dr. Archiver safely stores your documents
-                as PDF files in your iCloud Drive folder and the document data in Apple's CloudKit database. Your data is entirely yours - no data mining, no data leaks.
+            <div className="textBox mt-8">
+                Archivist is an AI-powered document archiving app for iOS, iPadOS and MacOS. Dr. Archiver safely stores your documents
+                as PDF files in your iCloud Drive folder and the document data in Apple's CloudKit database. 
                 All you need is an iCloud account. It's that simple.  
             </div>
         </div>

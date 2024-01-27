@@ -14,10 +14,10 @@ export const metadata = {
 
 
 export default function RootLayout({ children }) {
-
+  // bg-slate-50 dark:bg-[#0d1117]
   return (
-    <html lang="en">
-      <body className={`${inter.className} bg-slate-50 dark:bg-[#0d1117] duration-500` }>
+    <html lang="en" suppressHydrationWarning> 
+      <body className={`${inter.className} text-stone-950 dark:text-stone-50` }>
        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         {children}
         </ThemeProvider>

@@ -25,13 +25,13 @@ const AIDetectionSection = () => {
                 Ready for more? Switch on AI document properties detection and ask GPT 3.5 Turbo to set the topic(s), document type and title.
             </div>
 
-            <div className='block lg:hidden' >
-                <Image className='h-8 object-contain' src={ theme === 'light' ? OpenAILogoOnLight : OpenAILogoOnDark} alt="Powered by OpenAI"/>
+            <div className='block sm:hidden' >
+                <Image className='h-7 sm:h-8 object-contain my-1' src={ theme === 'light' ? OpenAILogoOnLight : OpenAILogoOnDark} alt="Powered by OpenAI"/>
             </div>
 
-            <div ref={animationRef} className='flex justify-center items-center'>
+            <div ref={animationRef} className='flex flex-row justify-center items-center pt-4'>
                 <Image  className='galleryImg' src={theme === 'light' ? iOSImageLight : iOSImageDark} alt="iOS GPT document properties detection" rounded />
-                <Image className='galleryImg hidden lg:block' src={theme === 'light' ? MacOSImageLight : MacOSImageDark}  alt="MacOS GPT document properties detection" />  
+                <Image className='galleryImg hidden sm:block' src={theme === 'light' ? MacOSImageLight : MacOSImageDark}  alt="MacOS GPT document properties detection" />  
             </div>
 
     

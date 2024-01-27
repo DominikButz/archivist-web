@@ -6,8 +6,11 @@ import Link  from "next/link"
 import { usePathname } from 'next/navigation';
 import { ThemeSwitcher } from "./themeSwitcher";
 import {useTheme} from "next-themes";
+import { useIsClient } from "@/util/is-client-ctx";
+import windowSizeProvider from "@/util/windowSizeListener";
 // import { useEffect } from "react";
-import Icon from "/src/images/DrArchiverAppIcon_macOS.png"
+import IconDark from "/src/images/DrArchiverAppIcon_macOS.png"
+import IconLight from "/src/images/ArchivistAppIcon_macOS.png"
 import OpenAILogoOnDark from "/src/images/powered-by-openai-badge-filled-on-dark.png"
 import OpenAILogoOnLight from "/src/images/powered-by-openai-badge-filled-on-light.png"
 import MacOSAppStoreDark from '/src/images/macOS/Download_on_the_Mac_App_Store_Badge_US-UK_RGB_blk_092917.svg'
@@ -19,47 +22,29 @@ const NavigationBar = ({ siteTitle='' }) => {
   const pathname = usePathname();
   const {theme, setTheme} = useTheme();
 
+  const isClient = useIsClient();
+
+  const windowSize = windowSizeProvider(isClient);
   
-  // useEffect(() => {
-  //   themeCheck();
-  // }, [theme]);
+  const iconHeight = windowSize[0] < 768 ?  30 : 36
 
-  // // check theme on component mount
-  // useEffect(() => {
-  //   themeCheck();
-  // }, []);
-
-  // // check and reset theme
-  // const themeCheck = () => {
-  //   if (
-  //     localStorage.theme === "dark" ||
-  //     (!("theme" in localStorage) &&
-  //       window.matchMedia("(prefers-color-scheme: dark)").matches)
-  //   ) {
-  //     document.documentElement.classList.add("dark");
-  //     setTheme('dark')
-  //   } else {
-  //     document.documentElement.classList.remove("dark");
-  //     setTheme('light');
-  //   }
-  // }
-
+  const appIcon = theme === 'light' ? IconLight : IconDark
   const appStoreImage = theme === 'light' ?  AppStoreLight : AppStoreDark
   const macAppStoreImage = theme === 'light' ? MacOSAppStoreLight : MacOSAppStoreDark
   const openAiLogo = theme == 'light' ? OpenAILogoOnLight : OpenAILogoOnDark
 
   return (
-    <div className="z-10 w-screen fixed bg-bgPrimary h-14 flex items-center justify-between top-0">
+    <div className="z-10 w-screen fixed bg-indigo-500 dark:bg-indigo-950 h-12 sm:h-14 flex items-center justify-between top-0">
       <div className="flex flex-row items-center">
-        <Link href="/" ><Image width={40} className="m-2" src={Icon}/></Link>
+        <Link href="/" ><Image height={iconHeight} className='m-2' src={appIcon}/></Link>
         <Link href="/" className={`${pathname === '/' ? 'activeLink' : 'inactiveLink' }`}>{siteTitle}</Link>
         <ThemeSwitcher />
       </div>
    
-      <div className="flex">
-        <Image height={34} className='m-2' src={appStoreImage} alt="Download on App Store"/>
-        <Image height={34} className='m-2 hidden sm:block' src={macAppStoreImage} alt="Download on Mac App Store"/>
-        <Image height={34} className='m-2 hidden lg:block' src={openAiLogo} alt="Powered by OpenAI"/>
+      <div className="flex flex-row items-center justify-end">
+        <Image  height={iconHeight} className="m-2" src={appStoreImage} alt="Download on App Store"/>
+        <Image height={iconHeight} className='m-2 hidden sm:block' src={macAppStoreImage} alt="Download on Mac App Store"/>
+        <Image height={iconHeight} className='m-2 hidden sm:block' src={openAiLogo} alt="Powered by OpenAI"/>
       </div>
    
     </div>

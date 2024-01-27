@@ -31,32 +31,33 @@ body {
 
 @layer components {
 
-  .sectionDefault {
-      @apply w-screen h-full flex flex-col items-center justify-center bg-gradient-to-b from-10%  from-bgPrimary via-10% to-bgSecondary;
+  .sectionDefault {  
+    /* from-10% from-bgPrimary via-10% to-bgSecondary   bg-gradient-to-b*/
+      @apply w-full h-full flex flex-col bg-gradient-to-b justify-center items-center from-indigo-500 from-10% to-indigo-200 dark:from-indigo-950  dark:to-indigo-800;
   }
 
   .inactiveLink { 
-      @apply font-bold no-underline text-slate-400 hover:text-white;
+      @apply font-bold no-underline text-stone-900 dark:text-blue-500 hover:text-stone-50 hover:scale-105 dark:hover:text-stone-50 transition-transform duration-75;
   }
 
   .activeLink {
-    @apply font-bold no-underline text-white
+    @apply font-bold no-underline text-stone-50 scale-105;
   }
 
   .textBox {
-      @apply text-white text-sm sm:text-base md:text-lg font-semibold mt-2 mx-8;
+      @apply text-sm sm:text-base md:text-lg font-medium mt-2 mx-8;
   }
 
-  .galleryImg {
-      @apply h-[68vh] object-contain m-5 drop-shadow-lg;
+  .galleryImg { 
+      @apply max-h-[68vh] object-contain drop-shadow-lg;
   }
 
   .formInputLabel {
-      @apply  text-stone-700 dark:text-stone-50 text-sm sm:text-base font-semibold mb-1 block;
+      @apply  text-stone-900 dark:text-stone-50 text-sm sm:text-base font-semibold mb-1 block;
   }
 
   .formTextInput {
-      @apply appearance-none border  text-stone-700 dark:text-stone-50 border-gray-400 rounded w-full py-2 px-3 text-sm sm:text-base leading-tight focus:border-indigo-500
+      @apply appearance-none border  text-stone-900 dark:text-stone-50 border-gray-400 rounded w-full py-2 px-3 text-sm sm:text-base leading-tight focus:border-indigo-500
   }
 
 }

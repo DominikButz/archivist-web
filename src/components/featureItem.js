@@ -10,8 +10,8 @@ const FeatureItem = ({title, text, children})=> {
             {children}  
             </div>
             <div className="flex-col w-3/4 ml-2">
-                <div className="text-white font-semibold text-sm md:text-lg">{title}</div>
-                <div className="text-white text-sm md:text-lg">{text}</div>
+                <div className="font-semibold text-sm md:text-lg">{title}</div>
+                <div className="text-sm md:text-lg">{text}</div>
             </div>
        </div>
     )
