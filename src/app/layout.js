@@ -17,6 +17,9 @@ export default function RootLayout({ children }) {
   // bg-slate-50 dark:bg-[#0d1117]
   return (
     <html lang="en" suppressHydrationWarning> 
+    <head>
+    <link rel="manifest" href="/manifest.json" />
+    </head>
       <body className={`${inter.className} text-stone-950 dark:text-stone-50` }>
        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         {children}

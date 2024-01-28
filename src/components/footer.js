@@ -7,8 +7,8 @@ function Footer({position}) {
     const pathname = usePathname();
   return (
 
-    <div className={`flex ${position} h-18 bg-indigo-500 dark:bg-indigo-950 w-screen bottom-0 z-0`}>
-        <div className='flex flex-row h-16 w-screen items-center justify-evenly z-0'> 
+    <div className={`flex ${position} h-12  bg-indigo-500 dark:bg-indigo-950 w-screen bottom-0 z-0`}>
+        <div className='flex flex-row h-10  w-screen items-center md:items-top justify-evenly z-0'> 
             <Link href="/contact" className={`${pathname === '/contact' ? 'activeLink' : 'inactiveLink' } text-xs md:text-sm`}>Contact </Link>
             <Link href="/terms" className={`${pathname === '/terms' ? 'activeLink' : 'inactiveLink' } text-xs md:text-sm`}>Terms & Conditions </Link>
             <Link href="/privacy" className={`${pathname === '/privacy' ? 'activeLink' : 'inactiveLink' } text-xs md:text-sm`}>Privacy Policy</Link>

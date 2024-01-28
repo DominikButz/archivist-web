@@ -23,16 +23,16 @@ const DocSourcesSection = () => {
      <SectionAnimationProvider animationRef={animationRef}>
     
         <div className="sectionDefault">
-            <div ref={animationRef} className='flex flex-row justify-center items-center'>
-                    <div className='flex flex-col items-center' >
-                        <Image className='h-[65vh] object-contain drop-shadow-md' src={theme === 'light' ? iOSImageLight: iOSImageDark} alt="iOS document scanner" />
-                        <div className='textBox text-center sm:w-1/2 lg:w-3/4 h-[10vh]'>On iPhone and iPad, simply create a document by scanning pages with your camera. Or import images and files.</div>
+            <div ref={animationRef} className='flex items-baseline mobileLandscape:mt-14'>
+                    <div className='justify-center items-baseline' >
+                        <Image className='galleryImg align-middle' src={theme === 'light' ? iOSImageLight: iOSImageDark} alt="iOS document scanner" />
+                        <div className='textBox text-center mx-6'>On iPhone and iPad, create a document by scanning pages with your camera. Or import images and files.</div>
 
                     </div>
 
-                    <div className='flex-col items-center justify-center hidden lg:block'>
-                        <Image className='h-[65vh] object-contain drop-shadow-md' src={theme === 'light' ? macOSImageLight : macOSImageDark}  alt="MacOS drop file to create document" />
-                        <div className='textBox text-center h-[10vh] pt-3 w-5/6'>On your Mac, simply drag and drop a file into the documents list or click the import button to select files.</div>
+                    <div className='hidden landscape:inline-block justify-center'>
+                        <Image className='galleryImg align-middle' src={theme === 'light' ? macOSImageLight : macOSImageDark}  alt="MacOS drop file to create document" />
+                        <div className='textBox text-center mx-12'>On your Mac, simply drag and drop a file into the documents list or click the import button to select files.</div>
                      </div>
             </div>
 

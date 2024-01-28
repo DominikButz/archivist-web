@@ -22,12 +22,12 @@ const IntroSection = () => {
     
         <div className='sectionDefault'>
       
-            <div ref={animationRef} className='flex flex-row justify-center items-center pt-14'>
-                <Image className='max-h-[68vh] object-contain' src={iOSImage} alt="Dr. Archiver documents list view" placeholder="blur" />
-                <Image className='max-h-[68vh] object-contain hidden sm:block' src={macOSImage}  alt="Dr. Archiver main window" placeholder="blur" />  
+            <div ref={animationRef} className='flex flex-row items-center mt-10'>
+                <Image className='galleryImg' src={iOSImage} alt="Dr. Archiver documents list view" placeholder="blur" />
+                <Image className='galleryImg hidden landscape:block' src={macOSImage}  alt="Dr. Archiver main window" placeholder="blur" />  
             </div>
 
-            <div className="textBox mt-8">
+            <div className="textBox mt-2 mx-8">
                 Archivist is an AI-powered document archiving app for iOS, iPadOS and MacOS. Dr. Archiver safely stores your documents
                 as PDF files in your iCloud Drive folder and the document data in Apple's CloudKit database. 
                 All you need is an iCloud account. It's that simple.  

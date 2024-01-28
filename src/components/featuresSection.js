@@ -17,19 +17,22 @@ const OtherFeaturesSection = () => {
     const isClient = useIsClient();
 
     const currentWindowSize = windowSizeProvider(isClient)
+
+    const width = currentWindowSize[0]
+    const height = currentWindowSize[1]
  
-    const glyphSize = currentWindowSize[0] < 768 ?  48 : 72
+    const glyphSize = (width < 768 || height < 480) ?  40 : 72
 
     return (
     <SectionAnimationProvider animationRef={animationRef}>
        <div className='sectionDefault'>
-            <div class="h-5/6 md:h-5/6 w-5/6 inline-grid grid-cols-1 md:grid-cols-2 gap-0 mb-1 md:mt-14">
-            {/* h-5/6 md:h-5/6 w-5/6 */}
+            <div class="h-5/6 w-5/6 portrait:w-full mobileLandscape:w-full inline-grid grid-cols-1 landscape:grid-cols-2 gap-0 ml-3 mb-1 mt-14">
+           
                 <FeatureItem title="PDF Editing" text="Add, move and delete pages."><FilePdf size={glyphSize}/> </FeatureItem>
-                <FeatureItem title="OCR" text="Copy the document text to the clipboard - page by page or all pages."><Clipboard2Check size={glyphSize}  /> </FeatureItem>
+                <FeatureItem title="OCR" text="Copy the document text to the clipboard."><Clipboard2Check size={glyphSize}  /> </FeatureItem>
                 <FeatureItem title="AI Support" text="Harness the power of GPT to automatically set title, doc type and topics."><Robot size={glyphSize}/> </FeatureItem>
                 <span className='hidden sm:block'><FeatureItem title="Finder File Tags" text="Set topics and document types as Finder tags (MacOS only)."><Tags  size={glyphSize}/> </FeatureItem></span>
-                <FeatureItem title="No user lock-in" text="Even without using Archivist, you can access your files anytime in iCloud Drive - with a simple folder structure: Drawer -> topic(s) -> year."><ShieldLock size={glyphSize}/> </FeatureItem>
+                <FeatureItem title="No user lock-in" text="Even without Archivist, you can access your files anytime in iCloud Drive - with a simple folder structure: Drawer -> topic(s) -> year."><ShieldLock size={glyphSize}/> </FeatureItem>
                 <FeatureItem title="No BS" text="No login. No subscription. No ads. No data mining. No data leaks. Yes, we're serious."><EmojiSunglasses  size={glyphSize}/> </FeatureItem>
 
 

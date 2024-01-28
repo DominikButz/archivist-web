@@ -25,8 +25,9 @@ const NavigationBar = ({ siteTitle='' }) => {
   const isClient = useIsClient();
 
   const windowSize = windowSizeProvider(isClient);
-  
-  const iconHeight = windowSize[0] < 768 ?  30 : 36
+  const width = windowSize[0]
+  const height = windowSize[1]
+  const iconHeight = (width < 768 || height < 480) ?  30 : 36
 
   const appIcon = theme === 'light' ? IconLight : IconDark
   const appStoreImage = theme === 'light' ?  AppStoreLight : AppStoreDark
@@ -34,17 +35,17 @@ const NavigationBar = ({ siteTitle='' }) => {
   const openAiLogo = theme == 'light' ? OpenAILogoOnLight : OpenAILogoOnDark
 
   return (
-    <div className="z-10 w-screen fixed bg-indigo-500 dark:bg-indigo-950 h-12 sm:h-14 flex items-center justify-between top-0">
+    <div className="z-10 w-screen fixed bg-indigo-500 dark:bg-indigo-950 h-12 sm:h-14 mobilePortrait:h-12 mobileLandscape:h-12 flex items-center justify-between top-0">
       <div className="flex flex-row items-center">
-        <Link href="/" ><Image height={iconHeight} className='m-2' src={appIcon}/></Link>
-        <Link href="/" className={`${pathname === '/' ? 'activeLink' : 'inactiveLink' }`}>{siteTitle}</Link>
+        <Link href="/" ><Image height={iconHeight + 2} className='m-2' src={appIcon}/></Link>
+        <Link href="/" className={`${pathname === '/' ? 'activeLink' : 'inactiveLink' } `}>{siteTitle}</Link>
         <ThemeSwitcher />
       </div>
    
       <div className="flex flex-row items-center justify-end">
         <Image  height={iconHeight} className="m-2" src={appStoreImage} alt="Download on App Store"/>
-        <Image height={iconHeight} className='m-2 hidden sm:block' src={macAppStoreImage} alt="Download on Mac App Store"/>
-        <Image height={iconHeight} className='m-2 hidden sm:block' src={openAiLogo} alt="Powered by OpenAI"/>
+        <Image height={iconHeight} className='m-2 hidden landscape:block' src={macAppStoreImage} alt="Download on Mac App Store"/>
+        <Image height={iconHeight} className='m-2 hidden landscape:block' src={openAiLogo} alt="Powered by OpenAI"/>
       </div>
    
     </div>
