@@ -45,7 +45,7 @@ body {
   }
 
   .textBox {
-      @apply text-sm mobileLandscape:text-xs md:text-base lg:text-lg font-medium;
+      @apply text-sm mobileLandscape:text-xs md:text-lg font-medium;
   }
 
   .galleryImg { 

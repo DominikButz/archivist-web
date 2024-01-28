@@ -25,7 +25,7 @@ const AIDetectionSection = () => {
                 Ready for more? Switch on AI document properties detection and ask GPT 3.5 Turbo to set the topic(s), document type and title.
             </div>
 
-            <div className='hidden portrait:block' >
+            <div className='block sm:hidden' >
                 <Image className='h-7 sm:h-8 object-contain my-1' src={ theme === 'light' ? OpenAILogoOnLight : OpenAILogoOnDark} alt="Powered by OpenAI"/>
             </div>
 

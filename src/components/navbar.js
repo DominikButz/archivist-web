@@ -44,8 +44,8 @@ const NavigationBar = ({ siteTitle='' }) => {
    
       <div className="flex flex-row items-center justify-end">
         <Image  height={iconHeight} className="m-2" src={appStoreImage} alt="Download on App Store"/>
-        <Image height={iconHeight} className='m-2 hidden landscape:block' src={macAppStoreImage} alt="Download on Mac App Store"/>
-        <Image height={iconHeight} className='m-2 hidden landscape:block' src={openAiLogo} alt="Powered by OpenAI"/>
+        <Image height={iconHeight} className='m-2 hidden sm:block' src={macAppStoreImage} alt="Download on Mac App Store"/>
+        <Image height={iconHeight} className='m-2 hidden sm:block' src={openAiLogo} alt="Powered by OpenAI"/>
       </div>
    
     </div>
