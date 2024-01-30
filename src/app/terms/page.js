@@ -7,7 +7,7 @@ const Terms = () => {
 
     return(
         <Layout displayFooter={true}>
-            <div className="pr-4 pl-4 pt-16 pb-20">
+            <div className="prose pr-4 pl-4 pt-16 pb-20">
               
                     <TermsAndConditions />
               

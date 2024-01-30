@@ -1,48 +1,81 @@
 'use client';
 import React from 'react'
 import { useForm } from 'react-hook-form';
-import { useState } from 'react';
-import RCG from 'react-captcha-generator';
+import { useState, useEffect } from 'react';
+import { useTheme } from 'next-themes';
+import Spinner from './spinner';
 import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
+import { sendContactForm } from '@/lib/api';
 
 export default function ContactForm() {
 
+	const {theme, setTheme} = useTheme();
+
+	useEffect(()=> {
+	
+		const backgroundColor = theme === 'light' ? 'whitesmoke' : '#0d1117'
+		const textColor = theme === 'light' ? '#0d1117' : 'whitesmoke' 
+		loadCaptchaEnginge(6, backgroundColor, textColor)
+	}, [])
 
     const { register, handleSubmit, reset, getValues, formState: { errors }} = useForm({
         mode: 'onChange',
         reValidateMode: 'onChange',
       });
 
-	const [captchaInput, setCaptchaInput] = useState('');
-	const [captcha, setCaptcha] = useState('');
-	const [captchaValid, setCaptchaValid] = useState(false)
-	
-	const captchaResult = (text) => {
-
-		setCaptcha(text)
-
+	const testValues = {
+		'senderName' : 'John Doe',
+		'email': 'dominikbutz@gmail.com',
+		'subject' : 'Great app',
+		'message': 'This is the greatest app since the lauch of iPhone 1!'
 	}
+
+	const [captchaInput, setCaptchaInput] = useState('');
+	const [captchaValid, setCaptchaValid] = useState(false)
+	const [isLoading, setIsLoading] = useState(false);
+
 	
 	const captchaInputChanged = (event) => {
 		const text = event.target.value
 		setCaptchaInput(text)
-		console.log('captcha solution ' + captcha)
-		console.log('captcha input ' + text)
-		const captchaIsValid = text === captcha
+		// console.log('captcha solution ' + captcha)
+		// console.log('captcha input ' + text)
+		const captchaIsValid = validateCaptcha(text, false)
 		console.log('captcha valid ' + captchaIsValid)
 		setCaptchaValid(captchaIsValid)
 	}
 
-    const onSubmit = (data) => {
+    const onSubmit = async (data) => {
+		setIsLoading(true)
         console.log('errors ' + errors.email)
-		console.log(data);
-		console.log(getValues('subject'))
-        reset()
-		setCaptcha('')
-		setCaptchaInput('')
-		setCaptchaValid(false)
+		console.log(data)
+		if (validateCaptcha(captchaInput) === false) {
+
+			return
+		}
+		try {
+			console.log('sending request')
+			const response = await sendContactForm(data)
+			const message = await response.message
+			console.log(`response ${message}`)
+		
+			reset()
+			setCaptchaInput('')
+			setCaptchaValid(false)
+			setIsLoading(false)
+		} catch(error) {
+			console.log('logging on client: ' + error.message)
+			setIsLoading(false)
+		}
+ 
 		
 	};
+
+	// const updateSubmitButtonState = () => {
+	// 	const valueMissing = getValues('senderName').length < 2 || getValues('email').length === 0 || getValues('subject').length < 2 || getValues('message').length < 6 || getValues('captchaInput').length == 0
+	// 	const hasErrors = errors.email !== undefined || errors.senderName !== undefined || errors.subject !== undefined || errors.message !== undefined || captchaValid === false
+	// 	return valueMissing || hasErrors
+	// }
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -53,11 +86,11 @@ export default function ContactForm() {
 				</label>
 				<input
 					className="formTextInput"
-					id="name"
+					id="senderName"
 					type="text"
 					name="senderName"
 					placeholder="John Doe"
-                    {...register('senderName', { required: true, minLength: 2, maxLength:50 })}
+                    {...register('senderName', { required: true, minLength: 2, maxLength:50})}
 				/>
 				<p className={`text-red-500 text-xs italic mt-1  ${errors.senderName === undefined  && 'invisible'} `}>Name is required (between 2 and 50 characters)</p>
 			</div>
@@ -106,10 +139,11 @@ export default function ContactForm() {
 				<p className={`text-red-500 text-xs italic ${errors.message === undefined  && 'invisible'} `}>Message text is required (between 6 and 500 characters) </p>
 			</div>
 
-			<div className='-mt-6'>
-				<RCG result={captchaResult.bind(this)} /> 
+			<div className='mt-2'>
+				{/* <RCG result={captchaResult.bind(this)} />  */}
+				<LoadCanvasTemplate />
 				<input id="captchaInput" name="captchaInput" type="text"  required placeholder="Enter the numbers / letters in the image" 
-					className="formTextInput -mt-4"
+					className="formTextInput mt-2"
 					{...register('captchaInput', { required: true})}
 					onChange={captchaInputChanged}
 				/>
@@ -120,7 +154,11 @@ export default function ContactForm() {
 				type="submit"
                disabled={errors.email !== undefined || errors.senderName !== undefined || errors.subject !== undefined || errors.message !== undefined || captchaValid === false}
 			>
-				Submit
+				<div className='flex flex-row'>
+					{isLoading &&  <Spinner />} 
+					{isLoading === false && 'Submit'}
+					{isLoading && 'Submitting ...'}
+				</div>
 			</button>
 		</form>
     )
