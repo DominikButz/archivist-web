@@ -6,6 +6,7 @@ import { useTheme } from 'next-themes';
 import Spinner from './spinner';
 import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 import { sendContactForm } from '@/lib/api';
+import {toast, Toaster} from 'react-hot-toast';
 
 export default function ContactForm() {
 
@@ -23,12 +24,12 @@ export default function ContactForm() {
         reValidateMode: 'onChange',
       });
 
-	const testValues = {
-		'senderName' : 'John Doe',
-		'email': 'dominikbutz@gmail.com',
-		'subject' : 'Great app',
-		'message': 'This is the greatest app since the lauch of iPhone 1!'
-	}
+	// const testValues = {
+	// 	'senderName' : 'John Doe',
+	// 	'email': 'dominikbutz@gmail.com',
+	// 	'subject' : 'Great app',
+	// 	'message': 'This is the greatest app since the lauch of iPhone 1!'
+	// }
 
 	const [captchaInput, setCaptchaInput] = useState('');
 	const [captchaValid, setCaptchaValid] = useState(false)
@@ -58,14 +59,15 @@ export default function ContactForm() {
 			const response = await sendContactForm(data)
 			const message = await response.message
 			console.log(`response ${message}`)
-		
-			reset()
+			toast.success(message); 
+			//reset()
 			setCaptchaInput('')
 			setCaptchaValid(false)
 			setIsLoading(false)
 		} catch(error) {
 			console.log('logging on client: ' + error.message)
 			setIsLoading(false)
+			toast.error(`${error.message}`)
 		}
  
 		
@@ -160,6 +162,7 @@ export default function ContactForm() {
 					{isLoading && 'Submitting ...'}
 				</div>
 			</button>
+		
 		</form>
     )
 }

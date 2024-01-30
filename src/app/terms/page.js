@@ -7,11 +7,12 @@ const Terms = () => {
 
     return(
         <Layout displayFooter={true}>
-            <div className="prose pr-4 pl-4 pt-16 pb-20">
+            <article className="longArticle"> 
+            {/* see global.css */}
               
                     <TermsAndConditions />
               
-            </div>
+            </article>
             
         </Layout>
     )

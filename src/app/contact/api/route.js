@@ -28,8 +28,8 @@ export const POST = async (req) => {
                 html: `<p>${message}</p>` // html body
 
             })
-
-           return Response.json({message: "Successfully sent request!"}, {status: 200})
+   
+             return Response.json({message: "Successfully sent request!"}, {status: 200})
 
         } catch(error) {
             return new Response.json({error: error}, {status: 400})

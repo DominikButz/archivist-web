@@ -22,7 +22,7 @@ const IntroSection = () => {
     
         <div className='sectionDefault'>
       
-            <div ref={animationRef} className='flex flex-row items-center mt-10'>
+            <div ref={animationRef} className='flex mt-10  w-5/6 mx-auto'>
                 <Image className='galleryImg' src={iOSImage} alt="Dr. Archiver documents list view" placeholder="blur" />
                 <Image className='galleryImg hidden landscape:block' src={macOSImage}  alt="Dr. Archiver main window" placeholder="blur" />  
             </div>

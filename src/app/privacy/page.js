@@ -7,11 +7,11 @@ const PrivacyPolicy = () => {
 
     return(
         <Layout displayFooter={true}>
-            <div className="mr-4 ml-4 mt-16 pb-20">
+             <article className="longArticle"> 
               
                     <Privacy />
               
-            </div>
+            </article>
             
         </Layout>
     )

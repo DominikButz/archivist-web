@@ -26,7 +26,7 @@ const OtherFeaturesSection = () => {
     return (
     <SectionAnimationProvider animationRef={animationRef}>
        <div className='sectionDefault'>
-            <div class="h-5/6 w-5/6 portrait:w-full mobileLandscape:w-full inline-grid grid-cols-1 landscape:grid-cols-2 gap-0 ml-3 mb-1 mt-14">
+            <div class="h-5/6 w-full mobileLandscape:w-full inline-grid grid-cols-1 landscape:grid-cols-2 gap-0 ml-3 mb-1 mt-14 px-auto">
            
                 <FeatureItem title="PDF Editing" text="Add, move and delete pages."><FilePdf size={glyphSize}/> </FeatureItem>
                 <FeatureItem title="OCR" text="Copy the document text to the clipboard."><Clipboard2Check size={glyphSize}  /> </FeatureItem>
