@@ -60,7 +60,7 @@ export default function ContactForm() {
 			const message = await response.message
 			console.log(`response ${message}`)
 			toast.success(message); 
-			//reset()
+			reset()
 			setCaptchaInput('')
 			setCaptchaValid(false)
 			setIsLoading(false)

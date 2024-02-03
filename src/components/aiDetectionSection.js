@@ -20,18 +20,20 @@ const AIDetectionSection = () => {
     
         <div className='sectionDefault'>
 
-             <div className="textBox text-center m-3 mobileLandscape:mt-8">
-        
-                Ready for more? Switch on AI document properties detection and ask GPT 3.5 Turbo to set the topic(s), document type and title.
-            </div>
+          <div className='title mt-4'>Ready for more?</div>
 
-            <div className='block sm:hidden' >
+            <div className='block sm:hidden mx-auto' >
                 <Image className='h-7 sm:h-8 object-contain my-1' src={ theme === 'light' ? OpenAILogoOnLight : OpenAILogoOnDark} alt="Powered by OpenAI"/>
             </div>
 
             <div ref={animationRef} className='flex flex-row w-5/6 mx-auto pt-4'>
                 <Image  className='galleryImg' src={theme === 'light' ? iOSImageLight : iOSImageDark} alt="iOS GPT document properties detection" rounded />
                 <Image className='galleryImg hidden landscape:block' src={theme === 'light' ? MacOSImageLight : MacOSImageDark}  alt="MacOS GPT document properties detection" />  
+            </div>
+
+            <div className="textBox text-center mt-4 mx-4">
+        
+                Switch on AI document properties detection and ask GPT 3.5 Turbo to set the topic(s), document type and title.
             </div>
 
     

@@ -45,11 +45,15 @@ body {
   }
 
   .textBox {
-      @apply text-sm mobileLandscape:text-xs md:text-lg font-medium;
+      @apply text-xs mobileLandscape:text-xs md:text-base font-normal sm:font-semibold;
+  }
+
+  .title {
+    @apply text-2xl mobileLandscape:text-base md:text-3xl font-bold text-center mt-12;
   }
 
   .galleryImg { 
-      @apply max-h-[60vh]  mobileLandscape:max-h-[53vh] object-contain;
+      @apply max-h-[60dvh]  mobileLandscape:max-h-[50dvh] object-scale-down;
   }
 
   .formInputLabel {

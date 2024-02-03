@@ -21,7 +21,7 @@ const FullPageSection = ({ children, reference, showArrow,  scrollTo, scrollToRe
             </div>
 
             { showArrow && 
-                <div className='absolute z-10 w-5 h-5 m-auto left-0 right-0 bottom-2'>
+                <div className='absolute z-10 w-5 h-5 mr-2 right-0 bottom-2'>
                 <button className="animate-bounce" onClick={ () => scrollTo(scrollToRef)} ><ArrowDownCircleFill color={arrowColor} size={24}/></button>
             </div>
             

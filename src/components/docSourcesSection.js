@@ -23,17 +23,23 @@ const DocSourcesSection = () => {
      <SectionAnimationProvider animationRef={animationRef}>
     
         <div className="sectionDefault">
-            <div ref={animationRef} className='flex items-baseline mobileLandscape:mt-14'>
-                    <div className='justify-center items-baseline' >
-                        <Image className='galleryImg align-middle' src={theme === 'light' ? iOSImageLight: iOSImageDark} alt="iOS document scanner" />
-                        <div className='textBox text-center mx-6'>On iPhone and iPad, create a document by scanning pages with your camera. Or import images and files.</div>
 
-                    </div>
+            <div className='flex flex-col'>
 
-                    <div className='hidden landscape:inline-block justify-center'>
-                        <Image className='galleryImg align-middle' src={theme === 'light' ? macOSImageLight : macOSImageDark}  alt="MacOS drop file to create document" />
-                        <div className='textBox text-center mx-12'>On your Mac, simply drag and drop a file into the documents list or click the import button to select files.</div>
-                     </div>
+                <div className='title mt-2'> Go paperless</div>
+                
+                <div ref={animationRef} className='flex items-baseline mt-10'>
+                        <div className='justify-center items-baseline' >
+                            <Image className='galleryImg align-middle' src={theme === 'light' ? iOSImageLight: iOSImageDark} alt="iOS document scanner" />
+                            <div className='textBox text-center mx-6 mt-2'>On iPhone and iPad, scan pages with your camera. Or import images and files.</div>
+
+                        </div>
+
+                        <div className='hidden landscape:inline-block justify-center'>
+                            <Image className='galleryImg align-middle' src={theme === 'light' ? macOSImageLight : macOSImageDark}  alt="MacOS drop file to create document" />
+                            <div className='textBox text-center mx-12 mt-2'>On your Mac, simply drag and drop a file into the documents list or click the import button to select files.</div>
+                        </div>
+                </div>
             </div>
 
         </div>
