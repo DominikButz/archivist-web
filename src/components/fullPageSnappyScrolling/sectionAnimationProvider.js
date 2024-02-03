@@ -28,7 +28,7 @@ const SectionAnimationProvider = ({animationRef, children}) => {
           }
         }
       )
-    }, [])
+    }, [animationRef])
     
     return (
     <>

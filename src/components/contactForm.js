@@ -6,18 +6,18 @@ import { useTheme } from 'next-themes';
 import Spinner from './spinner';
 import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 import { sendContactForm } from '@/lib/api';
-import {toast, Toaster} from 'react-hot-toast';
+import {toast} from 'react-hot-toast';
 
 export default function ContactForm() {
 
-	const {theme, setTheme} = useTheme();
+	const {theme, _} = useTheme();
 
 	useEffect(()=> {
 	
 		const backgroundColor = theme === 'light' ? 'whitesmoke' : '#0d1117'
 		const textColor = theme === 'light' ? '#0d1117' : 'whitesmoke' 
 		loadCaptchaEnginge(6, backgroundColor, textColor)
-	}, [])
+	}, [theme])
 
     const { register, handleSubmit, reset, getValues, formState: { errors }} = useForm({
         mode: 'onChange',

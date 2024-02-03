@@ -29,8 +29,8 @@ const IntroSection = () => {
 
             <div className="textBox mt-2 md:mt-8 mx-8">
                 Archivist is an AI-powered document archiving app for iOS, iPadOS and MacOS. Dr. Archiver safely stores your documents
-                as PDF files in your iCloud Drive folder and the document data in Apple's CloudKit database. 
-                All you need is an iCloud account. It's that simple.  
+                as PDF files in your iCloud Drive folder and the document data in Apple&apos;s CloudKit database. 
+                All you need is an iCloud account. It&apos;s that simple.  
             </div>
         </div>
   

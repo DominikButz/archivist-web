@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react'
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { useIsClient } from '@/util/is-client-ctx';
-import windowSizeProvider from '@/util/windowSizeListener';
+import windowResizingHandler from '@/util/windowSizeListener';
 import SectionAnimationProvider from './fullPageSnappyScrolling/sectionAnimationProvider'
 import FeatureItem from './featureItem'
 import { FilePdf, Clipboard2Check, Robot, Tags, ShieldLock, EmojiSunglasses } from 'react-bootstrap-icons';
@@ -16,10 +16,18 @@ const OtherFeaturesSection = () => {
    
     const isClient = useIsClient();
 
-    const currentWindowSize = windowSizeProvider(isClient)
+    const [windowSize, setWindowSize] = useState([
+        isClient ? window.innerWidth : 0,
+        isClient ? window.innerHeight : 0,
+      ]);
+    
+    
+    useEffect(() => {
+        return windowResizingHandler(setWindowSize)
+    }, [setWindowSize]);
 
-    const width = currentWindowSize[0]
-    const height = currentWindowSize[1]
+    const width = windowSize[0]
+    const height = windowSize[1]
  
     const glyphSize = (width < 768 || height < 480) ?  40 : 72
 
