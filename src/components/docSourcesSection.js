@@ -24,7 +24,7 @@ const DocSourcesSection = () => {
     
         <div className="sectionDefault">
 
-            <div className='flex flex-col'>
+            <div className='flex flex-col justify-around'>
 
                 <div className='title mt-2'> Go paperless</div>
                 

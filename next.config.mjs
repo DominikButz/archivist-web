@@ -9,7 +9,7 @@ const withImages = require('next-images')
 const withMDX = createMDX({
     extension: /\.mdx?$/,
     options: {
-      remarkPlugins: [remarkGfm],
+      remarkPlugins: [],
       rehypePlugins: [],
       providerImportSource: '@mdx-js/react',
     },

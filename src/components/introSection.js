@@ -20,21 +20,21 @@ const IntroSection = () => {
 
     <SectionAnimationProvider animationRef={animationRef}>
     
-        <div className='sectionDefault'>
+        <div className='sectionDefault justify-around'>
      
-            <div className='title'>
-                Archive your documents
+            <div className='title mt-12'>
+                It&apos;s that simple.
             </div>
       
             <div ref={animationRef} className='flex mt-4  w-5/6 mx-auto'>
-                <Image className='galleryImg' src={iOSImage} alt="Dr. Archiver documents list view" placeholder="blur" />
-                <Image className='galleryImg hidden landscape:block' src={macOSImage}  alt="Dr. Archiver main window" placeholder="blur" />  
+                <Image className='galleryImg' src={iOSImage} alt="Dr. Archiver documents list view" />
+                <Image className='galleryImg hidden landscape:block' src={macOSImage}  alt="Dr. Archiver main window" />  
             </div>
 
-            <div className="textBox mt-2 md:mt-8 mx-8">
+            <div className="textBox mt-2 mx-8">
                 Archivist is an AI-powered document archiving app for iOS, iPadOS and MacOS. It safely stores your documents
                 in your iCloud Drive folder and the document data in Apple&apos;s CloudKit database. 
-                All you need is an iCloud account. It&apos;s that simple.  
+                All you need is an iCloud account.   
             </div>
         </div>
   

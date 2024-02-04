@@ -33,7 +33,7 @@ body {
 
   .sectionDefault {  
     /* from-10% from-bgPrimary via-10% to-bgSecondary   bg-gradient-to-b*/
-      @apply w-full h-full flex flex-col bg-gradient-to-b justify-center from-indigo-500 from-10% to-indigo-200 dark:from-indigo-950  dark:to-indigo-800;
+      @apply w-full h-full flex flex-col bg-gradient-to-b justify-center from-indigo-500 from-20% to-indigo-200 dark:from-indigo-950  dark:to-indigo-800;
   }
 
   .inactiveLink { 
@@ -45,11 +45,11 @@ body {
   }
 
   .textBox {
-      @apply text-xs mobileLandscape:text-xs md:text-base font-normal sm:font-semibold;
+      @apply text-sm mobileLandscape:text-xs md:text-base font-normal sm:font-semibold;
   }
 
   .title {
-    @apply text-2xl mobileLandscape:text-base md:text-3xl font-bold text-center mt-12;
+    @apply text-2xl mobileLandscape:text-base md:text-3xl font-bold text-center;
   }
 
   .galleryImg { 
