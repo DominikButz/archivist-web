@@ -21,20 +21,20 @@ const AIDetectionSection = () => {
         <div className='sectionDefault justify-around'>
 
           <div className='title mt-12'>Ready for more?</div>
-
-            <div className='block sm:hidden mx-auto' >
-                <Image className='h-8 object-contain my-1' src={ theme === 'light' ? OpenAILogoOnLight : OpenAILogoOnDark} alt="Powered by OpenAI"/>
-            </div>
-
-            <div ref={animationRef} className='flex flex-row w-5/6 mx-auto'>
-                <Image  className='galleryImg' src={theme === 'light' ? iOSImageLight : iOSImageDark} alt="iOS GPT document properties detection" rounded />
-                <Image className='galleryImg hidden landscape:block' src={theme === 'light' ? MacOSImageLight : MacOSImageDark}  alt="MacOS GPT document properties detection" />  
-            </div>
-
             <div className="textBox text-center mx-4">
         
                 Switch on AI document properties detection and ask GPT 3.5 Turbo to set the topic(s), document type and title.
             </div>
+            <div className='block sm:hidden mx-auto' >
+                <Image className='h-8 object-contain my-1' src={ theme === 'light' ? OpenAILogoOnLight : OpenAILogoOnDark} alt="Powered by OpenAI"/>
+            </div>
+
+            <div ref={animationRef} className='flex flex-row mx-auto'>
+                <Image  className='galleryImg' src={theme === 'light' ? iOSImageLight : iOSImageDark} alt="iOS GPT document properties detection" rounded />
+                <Image className='galleryImg hidden landscape:block' src={theme === 'light' ? MacOSImageLight : MacOSImageDark}  alt="MacOS GPT document properties detection" />  
+            </div>
+
+
 
     
         </div>

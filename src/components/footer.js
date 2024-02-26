@@ -13,7 +13,7 @@ function Footer({position}) {
             <Link href="/terms" className={`${pathname === '/terms' ? 'activeLink' : 'inactiveLink' } text-xs md:text-sm`}>Terms & Conditions </Link>
             <Link href="/privacy" className={`${pathname === '/privacy' ? 'activeLink' : 'inactiveLink' } text-xs md:text-sm`}>Privacy Policy</Link>
         </div>
-        <div className='text-stone-900 dark:text-stone-400 text-xs absolute bottom-0 right-0 z-30 h-5 text-nowrap mr-2 justify-self-end'>©2024 by Dominik Butz</div>
+        <div className='text-stone-900 dark:text-stone-400 text-[10px] absolute bottom-0 right-0 z-30 h-5 text-nowrap mr-2 justify-self-end'>©2024 by Dominik Butz</div>
     </div>
   )
 }

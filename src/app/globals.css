@@ -32,8 +32,8 @@ body {
 @layer components {
 
   .sectionDefault {  
-    /* from-10% from-bgPrimary via-10% to-bgSecondary   bg-gradient-to-b*/
-      @apply w-full h-full flex flex-col bg-gradient-to-b justify-center from-indigo-500 from-20% to-indigo-200 dark:from-indigo-950  dark:to-indigo-800;
+    /*  justify-center*/ 
+      @apply w-full h-full justify-around flex flex-col bg-gradient-to-b  from-indigo-500 from-20% to-indigo-200 dark:from-indigo-950  dark:to-indigo-800;
   }
 
   .inactiveLink { 
@@ -53,7 +53,8 @@ body {
   }
 
   .galleryImg { 
-      @apply max-h-[60dvh]  mobileLandscape:max-h-[50dvh] object-scale-down;
+      @apply  object-scale-down max-h-[68dvh]  mobileLandscape:max-h-[50dvh] px-3; 
+ 
   }
 
   .formInputLabel {
