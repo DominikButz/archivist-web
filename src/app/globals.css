@@ -33,7 +33,7 @@ body {
 
   .sectionDefault {  
     /*  justify-center*/ 
-      @apply w-full h-full justify-around flex flex-col bg-gradient-to-b  from-indigo-500 from-20% to-indigo-200 dark:from-indigo-950  dark:to-indigo-800;
+      @apply w-screen h-full justify-around items-center flex flex-col bg-gradient-to-b  from-indigo-500 from-20% to-indigo-200 dark:from-indigo-950  dark:to-indigo-800;
   }
 
   .inactiveLink { 
@@ -45,7 +45,7 @@ body {
   }
 
   .textBox {
-      @apply text-sm mobileLandscape:text-xs md:text-base font-normal sm:font-semibold;
+      @apply text-xs mobileLandscape:text-xs  mobileLandscape:font-normal sm:text-sm md:text-base lg:text-xl font-normal sm:font-semibold;
   }
 
   .title {

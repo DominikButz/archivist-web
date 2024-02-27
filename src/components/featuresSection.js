@@ -28,13 +28,12 @@ const OtherFeaturesSection = () => {
 
     const width = windowSize[0]
     const height = windowSize[1]
- 
     const glyphSize = (width < 768 || height < 480) ?  40 : 72
 
     return (
     <SectionAnimationProvider animationRef={animationRef}>
        <div className='sectionDefault'>
-            <div class="h-5/6 w-full mobileLandscape:w-full inline-grid grid-cols-1 landscape:grid-cols-2 gap-0 ml-3 mb-1 mt-14 px-auto">
+            <div class="h-5/6 w-full inline-grid grid-cols-1 landscape:grid-cols-2 gap-0 ml-12 mobileLandscape:ml-1 mobilePortrait:ml-3 mb-1 mt-14 mx-auto">
            
                 <FeatureItem title="PDF Editing" text="Add, move and delete pages."><FilePdf size={glyphSize}/> </FeatureItem>
                 <FeatureItem title="OCR" text="Copy the document text to the clipboard."><Clipboard2Check size={glyphSize}  /> </FeatureItem>

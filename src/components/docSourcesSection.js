@@ -28,7 +28,7 @@ const DocSourcesSection = () => {
 
                 <div className='title mt-2'> Go paperless</div>
                 
-                <div ref={animationRef} className='flex items-baseline mt-10'>
+                <div ref={animationRef} className='flex items-baseline mt-4'>
                         <div className='justify-center items-baseline' >
                             <Image className='galleryImg align-middle' src={theme === 'light' ? iOSImageLight: iOSImageDark} alt="iOS document scanner" />
                             <div className='textBox text-center mx-6 mt-2'>On iPhone and iPad, scan pages with your camera. Or import images and files.</div>
