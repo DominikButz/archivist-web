@@ -54,8 +54,12 @@ const NavigationBar = ({ siteTitle='' }) => {
       </div>
    
       <div className="flex flex-row items-center justify-end">
+        <Link href="https://apps.apple.com/hk/app/archivist/id6466692005?l=en-GB" rel="noopener noreferrer" target="_blank">
         <Image  height={iconHeight} className="m-2" src={appStoreImage} alt="Download on App Store"/>
+        </Link>
+        <Link href="https://apps.apple.com/hk/app/archivist/id6466692005?l=en-GB" rel="noopener noreferrer" target="_blank">
         <Image height={iconHeight} className='m-2 hidden sm:block' src={macAppStoreImage} alt="Download on Mac App Store"/>
+        </Link>
         <Image height={iconHeight} className='m-2 hidden sm:block' src={openAiLogo} alt="Powered by OpenAI"/>
       </div>
    
