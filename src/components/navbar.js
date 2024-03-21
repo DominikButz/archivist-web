@@ -35,7 +35,6 @@ const NavigationBar = ({ siteTitle='' }) => {
   }, [setWindowSize]);
 
 
-  
   const width = windowSize[0]
   const height = windowSize[1]
   const iconHeight = (width < 768 || height < 480) ?  30 : 36

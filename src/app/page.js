@@ -23,29 +23,31 @@ const IndexPage = () => {
   }
 
   return (
+  
     <Layout displayFooter={false}>
       <IsClientCtxProvider>
-    <FullPageContainer>
+        <FullPageContainer>
     
-        <FullPageSection reference={section1} showArrow={true} scrollTo={scrollTo} scrollToRef={section2}>
-           <IntroSection/>
-        </FullPageSection>
-        <FullPageSection reference={section2} showArrow={true} scrollTo={scrollTo}  scrollToRef={section3}>
-          <DocSourcesSection  />
-        </FullPageSection>
-  
-        <FullPageSection reference={section3}  showArrow={true} scrollTo={scrollTo}  scrollToRef={section4}>
-         <AIDetectionSection />
-        </FullPageSection>
+          <FullPageSection reference={section1} showArrow={true} scrollTo={scrollTo} scrollToRef={section2}>
+            <IntroSection/>
+          </FullPageSection>
+          <FullPageSection reference={section2} showArrow={true} scrollTo={scrollTo}  scrollToRef={section3}>
+            <DocSourcesSection  />
+          </FullPageSection>
+    
+          <FullPageSection reference={section3}  showArrow={true} scrollTo={scrollTo}  scrollToRef={section4}>
+          <AIDetectionSection />
+          </FullPageSection>
 
-        <FullPageSection reference={section4} showArrow={false} scrollTo={scrollTo}  scrollToRef={section1}>
-          <OtherFeaturesSection  />
-        </FullPageSection>
+          <FullPageSection reference={section4} showArrow={false} scrollTo={scrollTo}  scrollToRef={section1}>
+            <OtherFeaturesSection  />
+          </FullPageSection>
   
       
         </FullPageContainer>
         </IsClientCtxProvider>
    </Layout>
+
   
    )
   }

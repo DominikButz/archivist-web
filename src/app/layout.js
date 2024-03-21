@@ -16,18 +16,21 @@ export const metadata = {
 export default function RootLayout({ children }) {
   // bg-slate-50 dark:bg-[#0d1117]
   return (
+    
     <html lang="en" suppressHydrationWarning> 
     <head>
     <link rel="manifest" href="/manifest.json" />
     </head>
       <body className={`${inter.className} text-stone-950 dark:text-stone-50` }>
+    
       <Toaster position='top-center' />
        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
        
         {children}
         </ThemeProvider>
-   
+    
       </body>
     </html>
+  
   );
 }
