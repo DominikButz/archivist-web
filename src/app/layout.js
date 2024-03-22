@@ -1,8 +1,10 @@
 import { Inter } from "next/font/google";
+import { GoogleAnalytics } from '@next/third-parties/google'
 import "./globals.css";
 import { ThemeProvider } from "./themeProvider";
 import { Toaster } from "react-hot-toast";
 
+const gtagId = process.env.GTAGID
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,6 +33,7 @@ export default function RootLayout({ children }) {
         </ThemeProvider>
     
       </body>
+      <GoogleAnalytics gaId={gtagId}/>
     </html>
   
   );

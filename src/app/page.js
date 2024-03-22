@@ -10,7 +10,7 @@ import FullPageSection from "/src/components/fullPageSnappyScrolling/fullPageSec
 import FullPageContainer from "/src/components/fullPageSnappyScrolling/fullPageContainer"
 import { IsClientCtxProvider } from "@/util/is-client-ctx";
 import { initializeGoogleTagManager } from "@/util/gtagManager";
-const gtagId = process.env.GTAGID
+
 
 const IndexPage = () => {
 
@@ -22,11 +22,6 @@ const IndexPage = () => {
   const scrollTo = (section) => {
     section.current.scrollIntoView({behavior:"smooth"})
   }
-
-  useEffect(() => {
-    // Initialize Google Tag Manager with your GTM ID
-    initializeGoogleTagManager(gtagId);
-  }, []);
 
   return (
   
