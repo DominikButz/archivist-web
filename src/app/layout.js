@@ -20,6 +20,7 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning> 
     <head>
     <link rel="manifest" href="/manifest.json" />
+
     </head>
       <body className={`${inter.className} text-stone-950 dark:text-stone-50` }>
     

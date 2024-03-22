@@ -1,6 +1,6 @@
 'use client';
 import * as React from "react"
-import { useRef } from "react"
+import { useRef, useEffect } from "react"
 import Layout from "/src/components/pageLayout"
 import IntroSection from "/src/components/introSection"
 import AIDetectionSection from "/src/components/aiDetectionSection"
@@ -9,7 +9,8 @@ import OtherFeaturesSection from "/src/components/featuresSection"
 import FullPageSection from "/src/components/fullPageSnappyScrolling/fullPageSection"
 import FullPageContainer from "/src/components/fullPageSnappyScrolling/fullPageContainer"
 import { IsClientCtxProvider } from "@/util/is-client-ctx";
-
+import { initializeGoogleTagManager } from "@/util/gtagManager";
+const gtagId = process.env.GTAGID
 
 const IndexPage = () => {
 
@@ -21,6 +22,11 @@ const IndexPage = () => {
   const scrollTo = (section) => {
     section.current.scrollIntoView({behavior:"smooth"})
   }
+
+  useEffect(() => {
+    // Initialize Google Tag Manager with your GTM ID
+    initializeGoogleTagManager(gtagId);
+  }, []);
 
   return (
   
