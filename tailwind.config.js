@@ -42,5 +42,5 @@ module.exports = {
       }
     },
   },
-  plugins: [require('@tailwindcss/typography'),  require('tailwindcss-3d'), require("@nextui-org/react")],
+  plugins: [require('@tailwindcss/typography'),  require('@headlessui/tailwindcss'), require("@nextui-org/react")],
 };

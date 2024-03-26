@@ -9,7 +9,6 @@ import OtherFeaturesSection from "/src/components/featuresSection"
 import FullPageSection from "/src/components/fullPageSnappyScrolling/fullPageSection"
 import FullPageContainer from "/src/components/fullPageSnappyScrolling/fullPageContainer"
 import { IsClientCtxProvider } from "@/util/is-client-ctx";
-import { initializeGoogleTagManager } from "@/util/gtagManager";
 
 
 const IndexPage = () => {

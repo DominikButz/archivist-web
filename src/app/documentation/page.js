@@ -1,46 +1,64 @@
 'use client';
 import React from 'react'
 import Layout from '@/components/pageLayout';
-import {Tabs, Tab, Card, CardBody} from "@nextui-org/react";
-
+import { Tab } from '@headlessui/react'
+import AddingDocuments from '/src/content/documentation/Adding Documents.md'
+import EditingDocuments from '/src/content/documentation/Editing Documents.md'
+import SortingFiltering from '/src/content/documentation/SortingFiltering.md'
+import DocAttributeLabels from '/src/content/documentation/DocAttributeLabels.md'
+import Sharing from '/src/content/documentation/Sharing.md'
+import Settings from '/src/content/documentation/Settings.md'
 
 export default function Documentation() {
 
+    return (
+        <Layout>
+        <div className='mt-12'>
+        <Tab.Group>
+          <Tab.List className="fixed pt-6 w-full bg-white dark:bg-stone-900 ">
+            <Tab className="tab">Adding Documents</Tab>
+            <Tab className="tab">Editing Documents</Tab>
+            <Tab className="tab">Filtering</Tab>
+            <Tab className="tab">Doc Labels</Tab>
+            <Tab className="tab">Sharing</Tab>
+            <Tab className="tab">Settings</Tab>
+          </Tab.List>
+          <Tab.Panels>
+            <Tab.Panel>
+                <article className='longArticle mt-8 portrait:mt-12'>
+                    <AddingDocuments/>
+                </article>
+            </Tab.Panel>
+            <Tab.Panel>
+                <article className='longArticle mt-8 portrait:mt-12'>
+                    <EditingDocuments/>
+                </article>
+            </Tab.Panel>
+            <Tab.Panel>
+                <article className='longArticle mt-8 portrait:mt-12'>
+                    <SortingFiltering/>
+                </article>
+            </Tab.Panel>
+            <Tab.Panel>
+                <article className='longArticle mt-8 portrait:mt-12'>
+                    <DocAttributeLabels/>
+                </article>
+            </Tab.Panel>
+            <Tab.Panel>
+                <article className='longArticle mt-8 portrait:mt-12'>
+                    <Sharing/>
+                </article>
+            </Tab.Panel>
+            <Tab.Panel>
+                <article className='longArticle mt-8 portrait:mt-12'>
+                    <Settings/>
+                </article>
+            </Tab.Panel>
+          </Tab.Panels>
+        </Tab.Group>
+        </div>
+        </Layout>
+      )
 
-  return (
-    <Layout>
-        
-   
-      <div className="flex w-full flex-col mt-20">
-   
-      <Tabs aria-label="Options">
-        <Tab key="photos" title="Photos">
-          <Card>
-            <CardBody>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </CardBody>
-          </Card>  
-        </Tab>
-        <Tab key="music" title="Music">
-          <Card>
-            <CardBody>
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </CardBody>
-          </Card>  
-        </Tab>
-        <Tab key="videos" title="Videos">
-          <Card>
-            <CardBody>
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </CardBody>
-          </Card>  
-        </Tab>
-      </Tabs>
-   
-    </div> 
-    
-     
-  
-  </Layout>
-  )
+
 }
