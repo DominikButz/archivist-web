@@ -1,6 +1,6 @@
 'use client';
 import React from 'react'
-import ContactForm from '/src/components/contactForm'
+import ContactForm from './contactForm'
 import Layout from '/src/components/pageLayout'
 
 export default function Contact() {

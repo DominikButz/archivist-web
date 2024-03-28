@@ -45,7 +45,7 @@ const NavigationBar = ({ siteTitle='' }) => {
   const openAiLogo = theme == 'light' ? OpenAILogoOnLight : OpenAILogoOnDark
 
   return (
-    <div className="z-10 w-screen fixed bg-indigo-500 dark:bg-indigo-950 h-12 sm:h-14 mobilePortrait:h-12 mobileLandscape:h-12 flex items-center justify-between top-0">
+    <div className="z-10 w-screen fixed bg-indigo-600 dark:bg-indigo-950 h-12 sm:h-14 mobilePortrait:h-12 mobileLandscape:h-12 flex items-center justify-between top-0">
       <div className="flex flex-row items-center">
         <Link href="/" ><Image height={iconHeight + 2} className='m-2' src={appIcon} alt='Archivist app icon'/></Link>
         <Link href="/" className={`${pathname === '/' ? 'activeLink' : 'inactiveLink' } `}>{siteTitle}</Link>

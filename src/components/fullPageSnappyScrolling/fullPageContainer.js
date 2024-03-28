@@ -5,7 +5,7 @@ import * as React from "react"
 const FullPageContainer = ({children}) => {
  
     return ( // class name fullPageContainer only exists as animation reference identifer .. see section animation provider
-        <div className="fullPageContainer absolute overflow-y-auto overflow-x-clip overscroll-y-contain snap-y snap-mandatory h-full w-full no-scrollbar">
+        <div className="fullPageContainer absolute overflow-y-auto overflow-x-hidden overscroll-y-contain snap-y snap-mandatory h-full w-full no-scrollbar">
             {children}
         </div>
     )

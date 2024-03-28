@@ -3,7 +3,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form';
 import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
-import Spinner from './spinner';
+import Spinner from '/src/components/spinner';
 import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 import { sendContactForm } from '@/lib/api';
 import {toast} from 'react-hot-toast';
