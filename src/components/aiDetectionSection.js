@@ -4,8 +4,8 @@ import { useRef } from 'react'
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import SectionAnimationProvider from './fullPageSnappyScrolling/sectionAnimationProvider'
-import iOSImageLight from "/src/images/iOS/gptDetection_light_iOS-iphone_14_pro_web.png"
-import iOSImageDark from "/src/images/iOS/gptDetection_dark_iOS-iphone_14_pro_web.png"
+import iOSImageLight from "/src/images/iOS/gptDetection_light_iOS.png"
+import iOSImageDark from "/src/images/iOS/gptDetection_dark_iOS.png"
 import MacOSImageLight from "/src/images/macOS/gptDetection_light_macOS-front-web.png"
 import MacOSImageDark from "/src/images/macOS/gptDetection_dark_macOS-front-web.png"
 import OpenAILogoOnDark from "/src/images/powered-by-openai-badge-filled-on-dark.png"
