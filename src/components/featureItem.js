@@ -6,7 +6,7 @@ const FeatureItem = ({title, text, children})=> {
 
     return (
        <div className="flex items-start mx-1"> 
-            <div className="image">
+            <div>
             {children}  
             </div>
             <div className="flex-col w-3/4 mobileLandscape:w-5/6 ml-2">

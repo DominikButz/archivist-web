@@ -33,7 +33,7 @@ body {
 
   .sectionDefault {  
     /*  justify-center*/ 
-      @apply w-screen h-full justify-around items-center flex flex-col bg-gradient-to-b  from-indigo-600 from-20% to-indigo-300 dark:from-indigo-950  dark:to-indigo-800;
+      @apply w-screen h-full flex flex-col bg-gradient-to-b  from-indigo-600 from-20% to-indigo-300 dark:from-indigo-950  dark:to-indigo-800;
   }
 
   .inactiveLink { 
@@ -53,10 +53,15 @@ body {
     @apply text-2xl mobileLandscape:text-base md:text-3xl font-bold text-center;
   }
 
-  .galleryImg { 
-      @apply  object-scale-down max-h-[68dvh]  mobileLandscape:max-h-[50dvh] px-3; 
+  .galleryImgPortrait { 
+      @apply  object-scale-down max-h-[68dvh] mobileLandscape:max-h-[50dvh] px-4; 
  
   }
+
+  .galleryImgLandscape { 
+    @apply  object-scale-down max-h-[75dvh] mobileLandscape:max-h-[55dvh] hidden landscape:block px-4; 
+
+}
 
   .formInputLabel {
       @apply  text-stone-900 dark:text-stone-50 text-sm sm:text-base font-semibold mb-1 block;
