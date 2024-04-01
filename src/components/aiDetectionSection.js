@@ -10,7 +10,7 @@ import MacOSImageLight from "/src/images/macOS/gptDetection_light_macOS-front-we
 import MacOSImageDark from "/src/images/macOS/gptDetection_dark_macOS-front-web.png"
 import OpenAILogoOnDark from "/src/images/powered-by-openai-badge-filled-on-dark.png"
 import OpenAILogoOnLight from "/src/images/powered-by-openai-badge-filled-on-light.png"
-
+// test: new commit to trigger vercel update
 const AIDetectionSection = () => {
     const animationRef = useRef();
     const {theme, setTheme} = useTheme();
