@@ -3,10 +3,12 @@ import React from 'react'
 import { useForm } from 'react-hook-form';
 import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
+import Image from 'next/image';
 import Spinner from '/src/components/spinner';
 import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 import { sendContactForm } from '@/lib/api';
 import {toast} from 'react-hot-toast';
+import oddAppImage from "/src/images/oddAppIconSmall.PNG"
 
 export default function ContactForm() {
 
@@ -81,7 +83,10 @@ export default function ContactForm() {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
+			<div className='flex flex-row justify-between'>
              <div className='text-2xl sm:text-3xl mb-2 text-stone-800 dark:text-stone-50 font-bold'>Contact</div>
+			 <Image src={oddAppImage} className='h-16 w-16' />
+			 </div>
 			<div className="mb-2">
 				<label className="formInputLabel" htmlFor="senderName">
                 First name, last name 
@@ -142,8 +147,8 @@ export default function ContactForm() {
 			</div>
 
 			<div className='mt-2'>
-				{/* <RCG result={captchaResult.bind(this)} />  */}
 				<LoadCanvasTemplate />
+
 				<input id="captchaInput" name="captchaInput" type="text"  required placeholder="Enter the numbers / letters in the image" 
 					className="formTextInput mt-2"
 					{...register('captchaInput', { required: true})}

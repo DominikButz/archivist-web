@@ -8,7 +8,7 @@ export default function TabbedDocumentation({sections}) {
     <Tab.Group>
     <Tab.List className="fixed pt-4 w-full bg-white dark:bg-stone-900 ">
     {sections.map((section) => (    
-        <Tab key={section.id} className="no-underline ui-selected:scale-105 px-2 border-2 ui-not-selected:text-indigo-600 ui-not-selected:border-indigo-600  ui-selected:border-stone-900 dark:ui-not-selected:text-indigo-500 dark:ui-selected:border-stone-50 dark:ui-not-selected:border-indigo-500 rounded-sm mx-2 mb-2">{section.name}</Tab>
+        <Tab key={section.id} className="no-underline ui-selected:scale-105 px-2 border-2 ui-not-selected:text-blue-500 ui-not-selected:border-blue-500  ui-selected:border-stone-900 dark:ui-not-selected:text-indigo-500 dark:ui-selected:border-stone-50 dark:ui-not-selected:border-indigo-500 rounded-sm mx-2 mb-2">{section.name}</Tab>
     ))}
     </Tab.List>
     <Tab.Panels>
