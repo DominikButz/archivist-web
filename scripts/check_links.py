@@ -155,6 +155,15 @@ def main() -> int:
         for url, kind in parser.urls:
             total_links += check_url(page, url, kind, errors, cache)
 
+    for slug in ("terms", "privacy"):
+        document = ROOT / slug / "index.html"
+        if document.exists():
+            markup = document.read_text(encoding="utf-8")
+            if '<article class="longArticle">' not in markup:
+                errors.append(f"{slug}/index.html: missing <article class=\"longArticle\"> wrapper used by the app webview")
+            if markup.count("</article>") != 1:
+                errors.append(f"{slug}/index.html: expected exactly one </article> for the app webview")
+
     og = ROOT / "assets" / "img" / "og.png"
     if not og.exists():
         errors.append("assets/img/og.png: missing social preview image")

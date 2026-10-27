@@ -24,9 +24,10 @@ The script checks internal links, assets, anchors, page titles, meta description
 
 - `index.html`: home page
 - `documentation/index.html`: documentation
-- `legal/index.html`: terms and privacy
+- `legal/index.html`: legal overview with links to the two documents
+- `terms/index.html`: terms and conditions, also read by the app webview
+- `privacy/index.html`: privacy policy, also read by the app webview
 - `contact/index.html`: support email
-- `privacy/` and `terms/`: redirects to the legal page anchors
 - `assets/`: styles, fonts and images
 - `scripts/check_links.py`: local link checker
 
@@ -40,4 +41,5 @@ The same repository can be deployed to Vercel as a static site. `vercel.json` se
 
 - Light and dark mode follow the operating system. There is no theme toggle and no JavaScript.
 - The App Store links point to the universal Archivist app listing.
+- The iOS and macOS apps load `/terms/` and `/privacy/` in a webview and read the `<article class="longArticle">` element from the HTML. Keep that exact wrapper and put the full text inside it.
 - Screenshots and documentation images are optimized WebP files derived from the previous Next.js site.

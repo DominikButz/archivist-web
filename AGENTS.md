@@ -25,10 +25,10 @@ Two hosts serve the same files from `main`:
 ```
 index.html                  Home page, feature sections, App Store links
 documentation/index.html    Feature documentation with screenshots
-legal/index.html            Terms and privacy policy (anchored sections)
+legal/index.html            Legal overview linking to both documents
+terms/index.html            Terms, wrapped in <article class="longArticle"> for the app
+privacy/index.html          Privacy policy, same wrapper for the app
 contact/index.html          Support email
-privacy/index.html          Meta refresh redirect to ../legal/#privacy
-terms/index.html            Meta refresh redirect to ../legal/#terms
 404.html                    Custom not found page
 assets/css/styles.css       All styling, responsive rules, dark mode
 assets/fonts/               Self hosted Instrument Sans and Instrument Serif (woff2)
@@ -56,14 +56,15 @@ python3 scripts/check_links.py
 npx --yes html-validate index.html documentation/index.html legal/index.html contact/index.html 404.html privacy/index.html terms/index.html
 ```
 
-The link checker covers internal links, assets, anchors, page titles, meta descriptions and image alt text. Run both, and fix errors rather than suppressing them.
+The link checker covers internal links, assets, anchors, page titles, meta descriptions and image alt text. It also checks that `terms/` and `privacy/` keep the `<article class="longArticle">` wrapper the app webview reads. Run both, and fix errors rather than suppressing them.
 
 Also check for layout problems when touching CSS: no horizontal overflow at 320, 390, 768 and 1440 px, in both light and dark mode.
 
 ## Updating content
 
 - Feature copy lives in `index.html`. Long form details and screenshots live in `documentation/index.html`.
-- Terms and privacy text lives in `legal/index.html`. The `/privacy/` and `/terms/` pages only redirect to its anchors, so keep the anchor ids `privacy` and `terms` intact.
+- Terms text lives in `terms/index.html`, privacy text in `privacy/index.html`. `legal/index.html` is an overview that links to both and keeps the `#terms` and `#privacy` anchors.
+- The iOS and macOS apps load `/terms/` and `/privacy/` in a webview, fetch the HTML and extract `<article class="longArticle">`. Keep that exact wrapper with the full document inside and no nested `</article>`. Without it the webview shows a blank page.
 - Contact is `support@archivist-app.com`. There is no contact form.
 - The App Store URL is `https://apps.apple.com/hk/app/archivist/id6466692005?l=en-GB`. Keep it identical everywhere.
 - The canonical, Open Graph and sitemap URLs point at `https://www.archivist-app.com/`. If the domain moves, update `index.html`, the other page heads, `sitemap.xml` and `robots.txt` together.

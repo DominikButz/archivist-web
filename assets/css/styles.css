@@ -1104,6 +1104,7 @@ main:focus {
   border-top: 1px solid var(--line);
 }
 
+.legal-section h1,
 .legal-section h2 {
   margin-bottom: 20px;
   font-size: clamp(1.9rem, 3vw, 2.6rem);
@@ -1138,6 +1139,10 @@ main:focus {
 
 .legal-section a {
   color: var(--blue-ink);
+}
+
+.legal-section .button {
+  color: #ffffff;
 }
 
 /* Contact */
