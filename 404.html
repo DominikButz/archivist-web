@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found | Archivist</title>
+  <meta name="description" content="Page not found on the Archivist website.">
+  <meta name="robots" content="noindex">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --paper: #f7f9fc;
+      --ink: #0a1533;
+      --muted: #52607a;
+      --blue: #0b5cff;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #07101f;
+        --ink: #e9effa;
+        --muted: #9aa9c2;
+        --blue: #5b8cff;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      display: grid;
+      min-height: 100vh;
+      margin: 0;
+      place-items: center;
+      padding: 32px;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    main { max-width: 520px; }
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2.2rem, 7vw, 3.4rem);
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+    }
+    p { margin: 0 0 24px; color: var(--muted); }
+    nav { display: flex; flex-wrap: wrap; gap: 16px; }
+    a { color: var(--blue); font-weight: 600; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Page not found</h1>
+    <p>That page does not exist. Try the home page or the documentation.</p>
+    <nav aria-label="Helpful links">
+      <a href="https://www.archivist-app.com/">Home</a>
+      <a href="https://www.archivist-app.com/documentation/">Documentation</a>
+      <a href="mailto:support@archivist-app.com">Email support</a>
+    </nav>
+  </main>
+</body>
+</html>
