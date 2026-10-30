@@ -8,8 +8,8 @@ Static marketing site for the Archivist app for iPhone, iPad and Mac. Plain HTML
 
 Two hosts serve the same files from `main`:
 
-- Vercel: https://www.archivist-app.com (primary, custom domain)
-- GitHub Pages: https://dominikbutz.github.io/archivist-web/ (fallback)
+- GitHub Pages: https://archivist.timepod.dev (primary, custom domain)
+- Vercel: https://www.archivist-app.com (legacy, still live until the apps switch to the new domain)
 
 ## Hard constraints
 
@@ -34,7 +34,7 @@ assets/css/styles.css       All styling, responsive rules, dark mode
 assets/fonts/               Self hosted Instrument Sans and Instrument Serif (woff2)
 assets/img/                 Screenshots, app store badges, Open Graph image
 scripts/check_links.py      Link, asset, anchor, metadata and alt text checker
-sitemap.xml                 Sitemap, URLs point at www.archivist-app.com
+sitemap.xml                 Sitemap, URLs point at archivist.timepod.dev
 robots.txt                  Allow all, sitemap reference
 manifest.webmanifest        Web app manifest
 .nojekyll                   Stops GitHub Pages from running Jekyll
@@ -65,9 +65,9 @@ Also check for layout problems when touching CSS: no horizontal overflow at 320,
 - Feature copy lives in `index.html`. Long form details and screenshots live in `documentation/index.html`.
 - Terms text lives in `terms/index.html`, privacy text in `privacy/index.html`. `legal/index.html` is an overview that links to both and keeps the `#terms` and `#privacy` anchors.
 - The iOS and macOS apps load `/terms/` and `/privacy/` in a webview, fetch the HTML and extract `<article class="longArticle">`. Keep that exact wrapper with the full document inside and no nested `</article>`. Without it the webview shows a blank page.
-- Contact is `support@archivist-app.com`. There is no contact form.
+- Contact is `archivist-support@timepod.dev`. There is no contact form.
 - The App Store URL is `https://apps.apple.com/hk/app/archivist/id6466692005?l=en-GB`. Keep it identical everywhere.
-- The canonical, Open Graph and sitemap URLs point at `https://www.archivist-app.com/`. If the domain moves, update `index.html`, the other page heads, `sitemap.xml` and `robots.txt` together.
+- The canonical, Open Graph and sitemap URLs point at `https://archivist.timepod.dev/`. If the domain moves, update `index.html`, the other page heads, `sitemap.xml` and `robots.txt` together.
 - Screenshots are WebP files in `assets/img/`. Each section uses a `-sm` variant for narrow viewports and a full size variant for wide ones, in light and dark. When replacing a screenshot, replace both variants for both modes.
 - App details can be checked in the Xcode project at `/Users/Dominik/Documents/Programmieren/Xcode Projects/Dr. Archiver`. Read only, do not change the app from here.
 
@@ -91,16 +91,16 @@ npx --yes vercel deploy --temporary --yes --verify
 
 Check the returned URL, then push to `main`. The command creates a `.vercel/` folder, which is gitignored.
 
-### If the domain moves to GitHub Pages
+### Custom domain
 
-Add a `CNAME` file containing the domain, point DNS at GitHub Pages, then update the canonical, Open Graph and sitemap URLs as described above.
+`archivist.timepod.dev` is served by GitHub Pages, with DNS pointed at GitHub Pages. Keep the canonical, Open Graph, sitemap and robots URLs on that host. The Vercel deployment at `www.archivist-app.com` is legacy and will be shut down once the apps point at the new domain.
 
 ## Verifying a deploy
 
 ```sh
 for path in / /documentation/ /legal/ /contact/ /privacy/ /terms/ /assets/css/styles.css /assets/img/og.png /sitemap.xml; do
   printf '%-28s ' "$path"
-  curl -s -o /dev/null -w "%{http_code} %{content_type}\n" "https://www.archivist-app.com$path"
+  curl -s -o /dev/null -w "%{http_code} %{content_type}\n" "https://archivist.timepod.dev$path"
 done
 ```
 

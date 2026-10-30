@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.archivist-app.com/sitemap.xml
+Sitemap: https://archivist.timepod.dev/sitemap.xml

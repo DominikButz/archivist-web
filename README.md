@@ -33,7 +33,7 @@ The script checks internal links, assets, anchors, page titles, meta description
 
 ## Deployment
 
-The site is designed for GitHub Pages from the `main` branch root. The `.nojekyll` file keeps GitHub Pages from running Jekyll. For a custom domain, add a `CNAME` file with the domain and point DNS at GitHub Pages. All internal paths are relative, so the same files work on a project URL and on the custom domain.
+The site is deployed to GitHub Pages from the `main` branch root and served at https://archivist.timepod.dev. The `.nojekyll` file keeps GitHub Pages from running Jekyll. All internal paths are relative, so the same files work on a project URL and on the custom domain.
 
 The same repository can be deployed to Vercel as a static site. `vercel.json` selects the "Other" framework preset, skips dependency installation and runs a no-op build, so an existing Vercel project does not try to run a Next.js build after the static site replaces it.
 
